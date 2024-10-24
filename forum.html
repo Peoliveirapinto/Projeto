@@ -10,23 +10,28 @@
 </head>
 
 <body>
+    <!--botão para abrir área de pergunta-->
+    <div class="container mt-5" >
+        <div class="row justify-content-start">
+            <div class="col-md-6">
+                <button class="btn btn-outline-primary mb-3 w-100">
+                    Mande a sua dúvida
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!--area de pergunta-->
-    <div class="container mt-5">
-        <div class="row justify-content-between">
+    <div class="container mt-3" style="border: 1px solid black; border-radius: 10px;">
+        <div class="row justify-content-start">
             <!--espaço pra inserir pergunta-->
-            <div class="col-md-9">
+            <div class="col-12 col-md-11 mt-2">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="duvidaBox" placeholder="Sua dúvida">
                     <label for="duvidaBox">
                         Sua dúvida
                     </label>
                 </div>
-            </div>
-            <!--botões de fechar-->
-            <div class="col-4 col-md-2">
-                <button class="btn btn-outline-danger mb-3 w-100">
-                    FECHAR
-                </button>
             </div>
         </div>
         <!--espaço para inserir detalhes da pergunta-->
@@ -38,7 +43,14 @@
             </div>
         </div>
         <!--botão de enviar-->
-        <div class="row justify-content-end">
+        <div class="row justify-content-between">
+            <!--botões de fechar-->
+            <div class="col-5 col-sm-4 col-md-3">
+                <button class="btn btn-outline-danger mb-3 w-100">
+                    FECHAR
+                </button>
+            </div>
+            <!--botão de enviar-->
             <div class="col-6 col-sm-5 col-md-4">
                 <button class="btn btn-outline-primary mb-3 w-100">
                     ENVIAR
@@ -47,6 +59,32 @@
         </div>
     </div>
 
+    <!--boletim de perguntas-->
+    <div class="container mt-4">
+        <table>
+            <thead>
+                <tr>
+                    <th>Dúvidas da comunidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <button class="btn btn-outline-secondary mb-3 w-100">
+                            teste
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <button class="btn btn-outline-secondary mb-3 w-100">
+                            teste2
+                        </button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script src="forumFrontend.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
