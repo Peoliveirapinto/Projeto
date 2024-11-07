@@ -14,7 +14,8 @@
     <div class="container mt-5" >
         <div class="row justify-content-start">
             <div class="col-md-6">
-                <button class="btn btn-outline-primary mb-3 w-100">
+                <!--dar disable enquanto não tem login-->
+                <button id="duvidaButton" class="btn btn-outline-primary mb-3 w-100" onclick="duvidaStart()" >
                     Mande a sua dúvida
                 </button>
             </div>
@@ -22,7 +23,7 @@
     </div>
 
     <!--area de pergunta-->
-    <div class="container mt-3" style="border: 1px solid black; border-radius: 10px;">
+    <div id="areaPergunta" class="container mt-3 d-none" style="border: 1px solid black; border-radius: 10px;">
         <div class="row justify-content-start">
             <!--espaço pra inserir pergunta-->
             <div class="col-12 col-md-11 mt-2">
@@ -46,13 +47,13 @@
         <div class="row justify-content-between">
             <!--botões de fechar-->
             <div class="col-5 col-sm-4 col-md-3">
-                <button class="btn btn-outline-danger mb-3 w-100">
+                <button class="btn btn-outline-danger mb-3 w-100" onclick="fecharPergunta()">
                     FECHAR
                 </button>
             </div>
             <!--botão de enviar-->
             <div class="col-6 col-sm-5 col-md-4">
-                <button class="btn btn-outline-primary mb-3 w-100">
+                <button class="btn btn-outline-primary mb-3 w-100" onclick="enviarPergunta()">
                     ENVIAR
                 </button>
             </div>
@@ -78,7 +79,7 @@
                 <tr>
                     <th>
                         <button class="btn btn-outline-secondary mb-3 w-100">
-                            teste2
+                            teste
                         </button>
                     </th>
                 </tr>
