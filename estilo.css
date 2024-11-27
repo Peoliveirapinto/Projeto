@@ -1,0 +1,69 @@
+/* Definindo a cor personalizada para o cabeçalho */
+.bg-custom {
+    background-color: #145da0; /* Cor que você pediu */
+}
+
+/* Cor para o menu de navegação */
+.bg-nav {
+    background-color: #007bbe; /* Cor para o menu de navegação */
+}
+
+/* Usando a fonte Roboto */
+body, h1, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos para o título "Matemática no Metrô" */
+h1.font-roboto {
+    font-size: 28px; /* Tamanho do texto */
+    font-weight: 700; /* Peso bold */
+}
+
+/* Estilo para o link de login */
+a.login-link {
+    font-size: 16px; /* Tamanho do texto */
+    font-weight: 400; /* Peso normal */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Sem sublinhado */
+}
+
+/* Efeito ao passar o mouse sobre o link de login */
+a.login-link:hover {
+    text-decoration: underline; /* Sublinhado quando o mouse passar */
+}
+
+/* Ajustando a altura do cabeçalho */
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Logo ajustada para ficar mais perto da margem */
+header img {
+    max-height: 50px; /* Ajuste a altura conforme necessário */
+}
+
+/* Estilos para o menu de navegação */
+nav .nav-link {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Menu centralizado e com espaçamento proporcional */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Ajustando o espaçamento entre os itens do menu */
+.nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* Removendo o rodapé, pois não será necessário */
+footer {
+    display: none;
+}
