@@ -1,50 +1,52 @@
-/* Definindo a cor personalizada para o cabeçalho */
-.bg-custom {
-    background-color: #145da0; /* Cor que você pediu */
-    height: 70px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-/* Cor para o menu de navegação */
-.bg-nav {
-    background-color: #007bbe;
-    height: 60px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-/* Usando a fonte Roboto */
+/* Estilos Gerais */
 body, h1, a {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Estilos para o título "Matemática no Metrô" */
-h1.font-roboto {
-    font-size: 32px;
-    font-weight: 700;
-    margin-left: -230px;
-    margin-bottom: 0;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-/* Estilo para o link de login */
+/* Cabeçalho */
+.bg-custom {
+    background-color: #145da0;
+    height: auto;
+    padding: 10px 0;
+}
+
+/* Estilos do Título */
+h1.font-roboto {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Estilo do Link de Login */
 a.login-link {
     font-size: 16px;
     font-weight: 400;
     color: white;
     text-decoration: none;
-    margin-right: 8px;
 }
 
-/* Efeito ao passar o mouse sobre o link de login */
 a.login-link:hover {
     text-decoration: underline;
     color: #ffdd00;
 }
 
-/* Estilo geral dos links do menu */
+/* Logo */
+header img.logo {
+    max-height: 56px;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+/* Menu de Navegação */
+.bg-nav {
+    background-color: #007bbe;
+}
+
 .nav-link {
     transition: all 0.3s ease-in-out;
     font-weight: 400;
@@ -53,86 +55,46 @@ a.login-link:hover {
     text-decoration: none;
 }
 
-/* Efeito hover para os itens do menu */
 .nav-item a.nav-link:hover {
     color: #ffdd00;
     text-decoration: underline;
 }
 
-/* Logo ajustada para ficar mais perto da margem */
-header img.logo {
-    max-height: 56px;
-    border-radius: 8px;
-    margin-left: 16px;
-}
-
-/* Logo com espaçamento das bordas */
-.logo-container {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-/* Ajustando o espaçamento do cabeçalho para remover o padding */
-header .col-md-2, header .col-md-8 {
-    padding: 0;
-}
-
-/* Menu centralizado e com espaçamento proporcional */
-nav .nav-link {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-}
-
-/* Ajustando o espaçamento entre os itens do menu */
-.nav-item {
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-/* Garantindo que a área azul vá até as bordas e afastando o conteúdo da margem */
-body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Ajustando a margem superior do conteúdo principal */
-main {
-    margin-top: 30px;
-}
-
-footer {
-    display: none;
-}
-
-/* Ajuste da área de cabeçalho e menu para ficar mais flexível */
-header .container-fluid,
-nav .container-fluid {
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-/* Remover o espaço em branco nas laterais */
-header, nav {
-    width: 100%;
-}
-
-/* Ajustando a imagem GIF */
-#gif-container {
-    margin-left: 0; /* Coloca o GIF mais perto da margem esquerda */
-}
-
+/* Conteúdo Principal */
 #gif-container img {
-    width: 100%; /* Faz o GIF ocupar 100% da largura disponível */
-    max-width: 400px; /* Ajusta o tamanho máximo do GIF */
-    border-radius: 10px; /* Bordas arredondadas no GIF */
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Espaçamento Responsivo */
+section.row.gy-4 {
+    row-gap: 20px; /* Espaço entre as linhas */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    /* Ajuste da largura do GIF em telas menores */
+    h1.font-roboto {
+        font-size: 24px;
+    }
+
     #gif-container img {
         max-width: 200px;
+    }
+
+    p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1.font-roboto {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    a.login-link {
+        font-size: 14px;
     }
 }
