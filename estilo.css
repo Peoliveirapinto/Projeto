@@ -156,3 +156,14 @@ a.login-link:hover {
         margin-right: 10px;
     }
 }
+
+/* Ajuste para telas entre 1750px e 750px */
+@media (max-width: 1750px) and (min-width: 750px) {
+    h1.titulo {
+        font-size: 28px; /* Ajusta o tamanho do título */
+        margin-left: 0; /* Remove a margem negativa para evitar que o título entre na logo */
+        white-space: normal; /* Permite que o título quebre linha */
+        line-height: 1.2; /* Ajusta a altura da linha para tornar a quebra mais fluida */
+        text-align: center; /* Centraliza o título quando ele quebrar linha */
+    }
+}
