@@ -23,7 +23,7 @@ body {
 header img.logo {
     max-height: 56px;
     border-radius: 8px;
-    margin-left: 25px; /* Logo um pouco afastada da margem */
+    margin-left: 110px; /* Logo um pouco afastada da margem */
 }
 
 /* Ajuste do container da logo */
@@ -35,7 +35,7 @@ header img.logo {
 h1.titulo {
     font-size: 32px;
     font-weight: 700;
-    margin-left: -200px; /* Aproximação do título à logo */
+    margin-left: -100px; /* Aproximação do título à logo */
     margin-bottom: 0;
     text-align: left; /* Garante que o título fique à esquerda */
     white-space: nowrap;
@@ -158,7 +158,7 @@ a.login-link:hover {
 }
 
 /* Ajuste para telas entre 1750px e 750px */
-@media (max-width: 1750px) and (min-width: 750px) {
+@media (max-width: 1500px) and (min-width: 750px) {
     h1.titulo {
         font-size: 28px; /* Ajusta o tamanho do título */
         margin-left: 0; /* Remove a margem negativa para evitar que o título entre na logo */
