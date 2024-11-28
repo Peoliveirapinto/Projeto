@@ -49,14 +49,14 @@ h1.titulo {
 a.login-link {
     font-size: 16px;
     font-weight: 400;
-    color: white;
+    color: white; /* Cor do texto branco */
     text-decoration: none;
     margin-right: 16px; /* Alinhamento da margem do login */
 }
 
 a.login-link:hover {
     text-decoration: underline;
-    color: #ffdd00;
+    color: #ffdd00; /* Cor ao passar o mouse */
 }
 
 /* Menu de Navegação */

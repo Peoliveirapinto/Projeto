@@ -24,9 +24,9 @@
                 <div class="col-12 col-md-8 text-start p-0">
                     <h1 class="font-roboto font-weight-bold titulo">Matemática no Metrô</h1>
                 </div>
-                <!-- Link de Login -->
+                <!-- Link de Login (agora abre o modal) -->
                 <div class="col-12 col-md-2 text-end p-0">
-                    <a href="login.html" class="font-roboto login-link">Login</a>
+                    <a href="#" class="font-roboto login-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                 </div>
             </div>
         </div>
@@ -52,6 +52,32 @@
             </div>
         </div>
     </nav>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulário de Login -->
+                    <form action="login.html" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Conteúdo Principal -->
     <main class="container mt-4">
