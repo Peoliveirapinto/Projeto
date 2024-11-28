@@ -20,6 +20,11 @@ body {
 }
 
 /* Logo */
+@media (max-width: 768px) {
+  header img.logo {
+    margin-left: 0; 
+  }
+}
 header img.logo {
   max-height: 56px;
   border-radius: 8px;
@@ -32,6 +37,11 @@ header img.logo {
 }
 
 /* Título */
+@media (max-width: 768px) { 
+  h1.titulo {
+    font-size: 24px; /* Diminui o tamanho do título */
+  }
+}
 h1.titulo {
   font-size: 32px;
   font-weight: 700;
@@ -83,18 +93,34 @@ a.login-link:hover {
   color: #ffdd00;
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    gap: 20px;
+    width: 100%; /* Ocupa a largura total da tela */
+  }
+}
 .container {
   display: flex;  /* Alinha os elementos lado a lado */
   gap: 100px;      /* Espaçamento entre as colunas */
   width: 800px;
 }
-
-.exercicio {
-  background-color: #007bff; /* Cor de fundo azul */
-  color: white;           /* Texto branco */
-  padding: 100px;
-  margin-bottom: 10px;     /* Espaço entre o exercício e o botão */
-  border-radius: 10px;    /* Cantos arredondados */
+@media (max-width: 768px) {
+  .exercicio {
+    font-size: 14px;
+    padding: 20px; 
+  }
+}
+.exercicio img {
+  max-width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Para centralizar a imagem, se necessário */
+  margin: 0 auto; /* Para centralizar a imagem, se necessário */
+  }
+@media (max-width: 768px) {
+  .btn-resolucao, .btn-vermais, .exercicio-passado {
+    font-size: 14px; 
+  }
 }
 .exercicio-passado {
   background-color: #007bff;
