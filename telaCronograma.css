@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+}
+.horario {
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    background-color:  #007bff;
+    margin-left: 10px;
+    margin-right: 1200px;
+    
+}
+.horario h3 {
+    margin-top: 0;
+}
