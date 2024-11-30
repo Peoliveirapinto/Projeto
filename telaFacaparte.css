@@ -1,0 +1,19 @@
+.texto {
+    flex: 1; /* Ocupa o espaço disponível */
+    margin-right: 30px; /* Espaçamento entre o texto e as imagens laterais */
+}
+
+.botao {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.imagem-esquerda, .imagem-direita {
+    justify-content: space-between;
+
+}
+
