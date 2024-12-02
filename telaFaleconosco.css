@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    padding: 50px 50px 50px 0; /* Adiciona padding à esquerda */
+    font-family: sans-serif;
+}
+
+.contato {
+    display: flex;
+    align-items: center; 
+    text-decoration: none; 
+    color: inherit; 
+    padding: 20px;
+    border-radius: 10px; 
+    width: 300px; 
+    background-color: #fff; /* Cor de fundo branca para as caixas */
+}
+
+.instagram {
+    border: 2px solid #e4405f; /* Borda na cor do Instagram */
+}
+
+.whatsapp {
+    border: 2px solid #25d366; /* Borda na cor do WhatsApp */
+}
+
+.icone {
+    width: 40px; 
+    margin-right: 20px; 
+    margin-left: -60px; /* Move o ícone para a esquerda */
+}
+
+.contato .texto {
+    text-align: left;
+}
+
+.contato .texto p:first-child {
+    font-weight: bold; 
+}

@@ -1,100 +1,31 @@
-/* Estilos Gerais */
-body, h1, a {
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Cabeçalho */
-.bg-custom {
-  background-color: #145da0;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between; /* Distribui os itens com espaço entre eles */
-  align-items: center;
-  flex-wrap: nowrap; /* Impede o wrap até telas muito pequenas */
-  position: relative;
-}
-
-/* Logo */
-header img.logo {
-  max-height: 56px;
-  border-radius: 8px;
-  margin-left: 25px; /* Logo um pouco afastada da margem */
-}
-
-/* Ajuste do container da logo */
-.logo-container {
-  padding-left: 16px;
-}
-
-/* Título */
-h1.titulo {
-  font-size: 32px;
-  font-weight: 700;
- 
-  margin-bottom: 0;
-  text-align: middle; /* Garante que o título fique à esquerda */
-  white-space: nowrap;
-  flex-grow: 1; /* Garante que o título ocupe o espaço restante */
-  margin-right: 0; /* Impede que o título ultrapasse a logo */
-  flex-shrink: 1; /* Permite que o título encolha ao diminuir a tela */
-  transition: margin-left 0.3s ease, font-size 0.3s ease; /* Transição suave */
-}
-
-/* Link de Login */
-a.login-link {
-  font-size: 16px;
-  font-weight: 400;
-  color: white;
-  text-decoration: none;
-  margin-right: 16px; /* Alinhamento da margem do login */
-}
-
-a.login-link:hover {
-  text-decoration: underline;
-  color: #ffdd00;
-}
-
-/* Menu de Navegação */
-.bg-nav {
-  background-color: #007bbe;
-  padding: 0;
-}
-
-.nav-link {
-  transition: all 0.3s ease-in-out;
-  font-weight: 400;
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-}
-
-/* Espaçamento entre os itens do menu */
-.nav-item {
-  margin-left: 25px; /* Ajuste do espaçamento à esquerda */
-  margin-right: 25px; /* Ajuste do espaçamento à direita */
-}
-
-.nav-item a.nav-link:hover {
-  color: #ffdd00;
-  text-decoration: underline;
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    gap: 20px;
+    width: 100%; /* Ocupa a largura total da tela */
+  }
 }
 .container {
   display: flex;  /* Alinha os elementos lado a lado */
   gap: 100px;      /* Espaçamento entre as colunas */
   width: 800px;
 }
-
-.exercicio {
-  background-color: #007bff; /* Cor de fundo azul */
-  color: white;           /* Texto branco */
-  padding: 100px;
-  margin-bottom: 10px;     /* Espaço entre o exercício e o botão */
-  border-radius: 10px;    /* Cantos arredondados */
+@media (max-width: 768px) {
+  .exercicio {
+    font-size: 14px;
+    padding: 20px; 
+  }
+}
+.exercicio img {
+  max-width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Para centralizar a imagem, se necessário */
+  margin: 0 auto; /* Para centralizar a imagem, se necessário */
+  }
+@media (max-width: 768px) {
+  .btn-resolucao, .btn-vermais, .exercicio-passado {
+    font-size: 14px; 
+  }
 }
 .exercicio-passado {
   background-color: #007bff;
