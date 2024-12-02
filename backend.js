@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 const bcrypt = require('bcrypt')
 const jwt =require('jsonwebtoken')
+const app =express()
+const { config }= require ('./config.js')
 
 app.use(express.json())
 app.use(cors())
@@ -53,7 +55,7 @@ app.post("/login", async (req, res) => {
 })
 
 async function conectarAoBanco() {
-    await mongoose.connect()
+    await mongoose.connect(config.mongoKey)
 }
 
 app.listen(3000, () => {
