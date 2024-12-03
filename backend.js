@@ -17,6 +17,15 @@ const usuarioSchema = mongoose.Schema({
 usuarioSchema.plugin(uniqueValidator)
 const Usuario = mongoose.model('Usuario', usuarioSchema)
 
+const duvidaSchema = mongoose.Schema({
+    tituloDuvida: {type:String, required:true},
+    conteudoDuvida: {type: String, required:true},
+    user: {type:String, required:true},
+    isResolvida: {type:Boolean, required:true},
+})
+duvidaSchema.plugin(uniqueValidator)
+const Duvida = mongoose.model('Duvida', duvidaSchema)
+
 app.post("/signup", async(req,res)=>{
     try{
         const login = req.body.login
@@ -52,6 +61,27 @@ app.post("/login", async (req, res) => {
         {expiresIn: '1h'}
     )
     res.status(200).json({token: token})
+})
+
+app.post("/postDuvida", async (req,res)=>{
+    try{
+        const tituloDuvida = req.body.tituloDuvida
+        const conteudoDuvida =req.body.conteudoDuvida
+        const user =req.body.user
+        const isResolvida = false
+        const duvida = new Duvida({
+            tituloDuvida: tituloDuvida,
+            conteudoDuvida:conteudoDuvida,
+            user: user,
+            isResolvida: isResolvida
+        })
+        const respMongo = await duvida.save()
+        console.log(respMongo)
+        res.status(201).end()
+    } catch(error){
+        console.log(error)
+        res.status(409).end()
+    }
 })
 
 async function conectarAoBanco() {
