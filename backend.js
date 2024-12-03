@@ -97,7 +97,7 @@ const respDuvidaSchema = mongoose.Schema({
     idDuvida: {type: Number, required: true}
 })
 respDuvidaSchema.plugin(uniqueValidator)
-const RespDuvida =mongoose.Aggregate.model('RespDuvida',respDuvidaSchema)
+const RespDuvida =mongoose.model('RespDuvida',respDuvidaSchema)
 
 app.post("/respDuvida", async (req,res)=>{
     try{
