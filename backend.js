@@ -122,6 +122,9 @@ app.get("/getRespDuvida", async (req,res)=>{
     res.json(resposta)
 })
 
+//conexão dos exercícios ao banco
+
+
 //conexão ao banco
 async function conectarAoBanco() {
     await mongoose.connect(config.mongoKey)
