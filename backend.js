@@ -13,7 +13,9 @@ app.use(cors())
 //conexão de login ao banco
 const usuarioSchema = mongoose.Schema({
     login: {type: String, required: true},
-    password: {type:String, required:true}
+    password: {type:String, required:true},
+    escolaridade: {type:String, required:true},
+    isAdmin: {type:Boolean, required:true}
 })
 usuarioSchema.plugin(uniqueValidator)
 const Usuario = mongoose.model('Usuario', usuarioSchema)
@@ -22,10 +24,14 @@ app.post("/signup", async(req,res)=>{
     try{
         const login = req.body.login
         const password = req.body.password
+        const escolaridade = req.body.escolaridade
         const criptografada = await bcrypt.hash(password, 10)
+        const isAdmin = false
         const usuario = new Usuario({
             login: login,
-            password: criptografada
+            password: criptografada,
+            escolaridade: escolaridade,
+            isAdmin: isAdmin
         })
         const respMongo = await usuario.save()
         console.log(respMongo)
@@ -99,7 +105,7 @@ const respDuvidaSchema = mongoose.Schema({
 respDuvidaSchema.plugin(uniqueValidator)
 const RespDuvida =mongoose.model('RespDuvida',respDuvidaSchema)
 
-app.post("/respDuvida", async (req,res)=>{
+app.post("/postRespDuvida", async (req,res)=>{
     try{
         const conteudoRespDuvida = req.body.conteudoRespDuvida
         const idDuvida = req.body.idDuvida
@@ -117,9 +123,41 @@ app.post("/respDuvida", async (req,res)=>{
 })
 
 app.get("/getRespDuvida", async (req,res)=>{
-    const idDuvida = req.body.idDuvida
     const resposta = await RespDuvida.findOne({idDuvida: req.body.idDuvida})
     res.json(resposta)
+})
+
+//conexão dos exercícios ao banco
+const exerciocioSchema = mongoose.Schema({
+    conteudoExercicio: {type:String, required:true},
+    respostaExercicio: {type:String, required:true},
+    dataExercicio: {type:Date, required:true}
+})
+exerciocioSchema.plugin(uniqueValidator)
+const Exercicio = mongoose.model('Exercicio', exerciocioSchema)
+
+app.post("/postExercicio", async (req, res)=>{
+    try{
+        const conteudoExercicio = req.body.conteudoExercicio
+        const respostaExercicio = req.body.respostaExercicio
+        const dataExercicio = req.body.dataExercicio
+        const exercicio = new Exercicio({
+            conteudoExercicio: conteudoExercicio,
+            respostaExercicio: respostaExercicio,
+            dataExercicio: dataExercicio
+        })
+        const respMongo = await exercicio.save()
+        console.log(respMongo)
+        res.status(201).end()
+    } catch (error){
+        console.log(error)
+        res.status(409).end()
+    }
+})
+
+app.get("/getExercicio", async (req,res)=>{
+    const exercicio = await Exercicio.findOne({dataExercicio:req.body.dataExercicio})
+    res.json(exercicio)
 })
 
 //conexão ao banco
