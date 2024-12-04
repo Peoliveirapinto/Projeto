@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Ligação com o arquivo CSS -->
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* Destaque para o menu ativo */
+        .nav-link.active {
+            color: #ffdd00 !important; /* Cor amarela para indicar a página atual */
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -24,9 +31,9 @@
                 <div class="col-12 col-md-8 text-start p-0">
                     <h1 class="font-roboto font-weight-bold titulo">Matemática no Metrô</h1>
                 </div>
-                <!-- Link de Login -->
+                <!-- Link de Login (abre o modal) -->
                 <div class="col-12 col-md-2 text-end p-0">
-                    <a href="login.html" class="font-roboto login-link">Login</a>
+                    <a href="#" class="font-roboto login-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                 </div>
             </div>
         </div>
@@ -53,6 +60,8 @@
             </div>
         </div>
     </nav>
+
+    <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
