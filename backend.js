@@ -61,6 +61,19 @@ app.post("/login", async (req, res) => {
     res.status(200).json({token: token})
 })
 
+app.post("/addAdmin", async (req,res)=>{
+    try{
+        const isAdmin = {isAdmin:true}
+        const novoAdmin = await Usuario.findOneAndUpdate({login:req.body.login}, {isAdmin:isAdmin})
+        const respMongo = await novoAdmin.save()
+        console.log(respMongo)
+        res.status(201).end()
+    } catch(error){
+        console.log(error)
+        res.status(409).end()
+    }
+})
+
 //conexão das dúvidas do fórum ao banco
 const duvidaSchema = mongoose.Schema({
     tituloDuvida: {type:String, required:true},
