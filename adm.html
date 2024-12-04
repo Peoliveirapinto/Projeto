@@ -42,51 +42,36 @@
     <!-- Menu de Navegação -->
     <nav class="navbar navbar-expand-lg bg-nav text-white">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Menu</a>
+            <!-- Palavra "Menu" visível apenas em dispositivos móveis -->
+            <a class="navbar-brand text-white d-lg-none" href="#">Menu</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Quem somos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Cronograma</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Fórum</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Exercícios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li> <!-- Alteração do link para Galeria -->
-                    <li class="nav-item"><a class="nav-link" href="#">Faça Parte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Quem somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cronograma.html">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="forum.html">Fórum de Dúvidas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="exercicios.html">Exercícios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="facaparte.html">Faça Parte</a></li>
                     <li class="nav-item"><a class="nav-link" href="faleconosco.html">Fale Conosco</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="adm.html">Administração</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+        <!-- Modal de Login -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
 
-<head> 
-  <title>Dúvidas da Comunidade</title>
-  <link rel="stylesheet" href="forum.css"> 
-</head>
-<body>
-
-<div class="container">
-  <button class="button">Mande a sua dúvida</button>
-
-  <h2>Dúvidas da comunidade</h2>
-
-  <div class="question-container">
-    <div class="question">
-      <strong>Fulano</strong>
-      <p>Não entendi a resolução do exercício postado na quinta</p>
-    </div>
-  </div>
-
-  <div class="question-container">
-    <div class="question">
-      <strong>Sicrano</strong>
-      <p>Como eu calculo o desconto em cima da taxa de serviço</p>
-    </div>
-    <div class="resolved">Resolvido</div>
-  </div>
-
-</div>
-
-</body>
+        <!-- Incluindo o Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
