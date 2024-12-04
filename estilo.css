@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between; /* Distribui os itens com espaço entre eles */
     align-items: center;
-    flex-wrap: nowrap; /* Impede o wrap até telas muito pequenas */
+    flex-wrap: nowrap; /* Impede a quebra de linha em telas pequenas */
     position: relative;
 }
 
@@ -23,40 +23,41 @@ body {
 header img.logo {
     max-height: 56px;
     border-radius: 8px;
-    margin-left: 115px; /* Logo um pouco afastada da margem */
+    margin-left: 25px; /* Margem inicial para afastar a logo da margem */
+    transition: all 0.3s ease-in-out; /* Transição suave */
 }
 
-/* Ajuste do container da logo */
+/* Container da logo */
 .logo-container {
-    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Impede a redução da logo */
 }
 
 /* Título */
 h1.titulo {
     font-size: 32px;
     font-weight: 700;
-    margin-left: -70px; /* Aproximação do título à logo */
-    margin-bottom: 0;
-    text-align: left; /* Garante que o título fique à esquerda */
+    margin: 0;
+    text-align: left;
     white-space: nowrap;
-    flex-grow: 1; /* Garante que o título ocupe o espaço restante */
-    margin-right: 0; /* Impede que o título ultrapasse a logo */
-    flex-shrink: 1; /* Permite que o título encolha ao diminuir a tela */
-    transition: margin-left 0.3s ease, font-size 0.3s ease; /* Transição suave */
+    flex-grow: 1; /* Faz o título ocupar o espaço disponível */
+    transition: all 0.3s ease-in-out; /* Suaviza o redimensionamento */
+    margin-left: -120px; /* Inicialmente, título mais próximo da logo */
 }
 
 /* Link de Login */
 a.login-link {
     font-size: 16px;
     font-weight: 400;
-    color: white; /* Cor do texto branco */
+    color: white; /* Cor do texto */
     text-decoration: none;
-    margin-right: 16px; /* Alinhamento da margem do login */
+    margin-right: 16px; /* Espaçamento direito */
 }
 
 a.login-link:hover {
     text-decoration: underline;
-    color: #ffdd00; /* Cor ao passar o mouse */
+    color: #ffdd00; /* Cor de hover */
 }
 
 /* Menu de Navegação */
@@ -75,8 +76,8 @@ a.login-link:hover {
 
 /* Espaçamento entre os itens do menu */
 .nav-item {
-    margin-left: 25px; /* Ajuste do espaçamento à esquerda */
-    margin-right: 25px; /* Ajuste do espaçamento à direita */
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .nav-item a.nav-link:hover {
@@ -84,86 +85,85 @@ a.login-link:hover {
     text-decoration: underline;
 }
 
-/* GIF */
-#gif-container img {
-    width: 100%;
-    height: 700px; /* Defina uma altura fixa aqui */
-    max-width: 500px; /* Ajuste a largura */
-    border-radius: 10px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    /* Ajustando o título */
-    h1.titulo {
-        font-size: 26px;
-        margin-left: -150px; /* Ajusta a margem do título em telas menores */
-        text-align: center; /* Centraliza o título em telas menores */
-        white-space: normal; /* Permite que o título quebre linha, se necessário */
-        margin-right: 0; /* Garante que o título não ultrapasse os limites */
-    }
-
-    #gif-container img {
-        max-width: 200px;
-    }
-
-    p {
-        font-size: 14px;
-        padding: 0 10px;
-    }
-
-    /* Ajustando o menu em telas menores */
-    .nav-item {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    /* Ajustando a logo e o login para telas menores */
+/* Responsividade - Cabeçalho */
+@media (max-width: 1250px) and (min-width: 780px) {
+    /* Ajusta a centralização do título para telas entre 1250px e 780px */
     .bg-custom {
-        justify-content: space-around; /* Distribui a logo, título e login de forma flexível */
-        text-align: center; /* Garante que os elementos fiquem centralizados na tela */
+        justify-content: center; /* Centraliza logo, título e login */
+        text-align: center; /* Centraliza os itens */
     }
 
-    /* Logo e Título */
-    header .logo-container,
-    header h1.titulo {
-        flex: 1; /* Garante que o título e a logo se ajustem corretamente no layout */
-        text-align: center; /* Garante o alinhamento central para telas pequenas */
+    h1.titulo {
+        margin-left: 0; /* Remove a margem esquerda do título */
+        font-size: 28px; /* Ajusta o tamanho do título */
+        text-align: center; /* Garante que o título seja centralizado */
     }
 
-    /* Link de Login */
-    .login-link {
-        font-size: 14px;
+    header img.logo {
+        margin-left: 20px; /* Ajuste para garantir que a logo não cole na margem */
     }
 }
 
-@media (max-width: 576px) {
-    /* Ajustando o título para dispositivos muito pequenos */
+@media (max-width: 1024px) {
     h1.titulo {
-        font-size: 20px;
-        margin-left: 0; /* Remove qualquer margem esquerda para telas pequenas */
+        margin-left: 0;
+        font-size: 24px; /* Ajuste do tamanho do título */
         text-align: center;
-        white-space: normal; /* Quebra linha, se necessário */
+    }
+
+    header img.logo {
+        margin-left: 15px; /* Ajusta a logo para não colar na margem */
+    }
+}
+
+@media (max-width: 980px) and (min-width: 770px) {
+    h1.titulo {
+        margin-left: 0;
+        font-size: 26px; /* Ajuste do tamanho do título */
+        text-align: center;
+    }
+
+    header img.logo {
+        margin-left: 15px; /* Ajuste para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-custom {
+        flex-direction: column; /* Coloca logo, título e login em uma coluna */
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+    }
+
+    .logo-container,
+    h1.titulo {
+        text-align: center; /* Centraliza a logo e o título */
+        margin-left: 0; /* Remove deslocamento lateral */
+    }
+
+    h1.titulo {
+        font-size: 24px; /* Reduz tamanho do título */
+        flex-grow: 0; /* Título não ocupa todo o espaço */
+        flex-shrink: 1; /* Permite que o título encolha sem sobrepor */
+        min-width: 120px; /* Garante que o título não fique muito pequeno */
+    }
+
+    header img.logo {
+        margin-left: 10px; /* Garante margem à esquerda da logo */
     }
 
     a.login-link {
         font-size: 14px;
     }
-
-    /* Ajustando o espaçamento do menu para telas pequenas */
-    .nav-item {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
 }
 
-/* Ajuste para telas entre 1750px e 750px */
-@media (max-width: 1450px) and (min-width: 750px) {
+@media (max-width: 576px) {
     h1.titulo {
-        font-size: 28px; /* Ajusta o tamanho do título */
-        margin-left: 0; /* Remove a margem negativa para evitar que o título entre na logo */
-        white-space: normal; /* Permite que o título quebre linha */
-        line-height: 1.2; /* Ajusta a altura da linha para tornar a quebra mais fluida */
-        text-align: center; /* Centraliza o título quando ele quebrar linha */
+        font-size: 25px; /* Reduz título ainda mais em telas pequenas */
+        margin-left: 0; /* Garante alinhamento correto */
+    }
+
+    a.login-link {
+        font-size: 14px;
     }
 }

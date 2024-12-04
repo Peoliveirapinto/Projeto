@@ -1,3 +1,174 @@
+/* Cabeçalho */
+.bg-custom {
+    background-color: #145da0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    align-items: center;
+    flex-wrap: nowrap; /* Impede a quebra de linha em telas pequenas */
+    position: relative;
+}
+
+/* Logo */
+header img.logo {
+    max-height: 56px;
+    border-radius: 8px;
+    margin-left: 25px; /* Margem inicial para afastar a logo da margem */
+    transition: all 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Container da logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Impede a redução da logo */
+}
+
+/* Título */
+h1.titulo {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+    white-space: nowrap;
+    flex-grow: 1; /* Faz o título ocupar o espaço disponível */
+    transition: all 0.3s ease-in-out; /* Suaviza o redimensionamento */
+    margin-left: -120px; /* Inicialmente, título mais próximo da logo */
+}
+
+/* Link de Login */
+a.login-link {
+    font-size: 16px;
+    font-weight: 400;
+    color: white; /* Cor do texto */
+    text-decoration: none;
+    margin-right: 16px; /* Espaçamento direito */
+}
+
+a.login-link:hover {
+    text-decoration: underline;
+    color: #ffdd00; /* Cor de hover */
+}
+
+/* Menu de Navegação */
+.bg-nav {
+    background-color: #007bbe;
+    padding: 0;
+}
+
+.nav-link {
+    transition: all 0.3s ease-in-out;
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Espaçamento entre os itens do menu */
+.nav-item {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.nav-item a.nav-link:hover {
+    color: #ffdd00;
+    text-decoration: underline;
+}
+
+/* Responsividade - Cabeçalho */
+@media (max-width: 1250px) and (min-width: 780px) {
+    /* Ajusta a centralização do título para telas entre 1250px e 780px */
+    .bg-custom {
+        justify-content: center; /* Centraliza logo, título e login */
+        text-align: center; /* Centraliza os itens */
+    }
+
+    h1.titulo {
+        margin-left: 0; /* Remove a margem esquerda do título */
+        font-size: 28px; /* Ajusta o tamanho do título */
+        text-align: center; /* Garante que o título seja centralizado */
+    }
+
+    header img.logo {
+        margin-left: 20px; /* Ajuste para garantir que a logo não cole na margem */
+    }
+}
+
+@media (max-width: 1024px) {
+    h1.titulo {
+        margin-left: 0;
+        font-size: 24px; /* Ajuste do tamanho do título */
+        text-align: center;
+    }
+
+    header img.logo {
+        margin-left: 15px; /* Ajusta a logo para não colar na margem */
+    }
+}
+
+@media (max-width: 980px) and (min-width: 770px) {
+    h1.titulo {
+        margin-left: 0;
+        font-size: 26px; /* Ajuste do tamanho do título */
+        text-align: center;
+    }
+
+    header img.logo {
+        margin-left: 15px; /* Ajuste para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-custom {
+        flex-direction: column; /* Coloca logo, título e login em uma coluna */
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+    }
+
+    .logo-container,
+    h1.titulo {
+        text-align: center; /* Centraliza a logo e o título */
+        margin-left: 0; /* Remove deslocamento lateral */
+    }
+
+    h1.titulo {
+        font-size: 24px; /* Reduz tamanho do título */
+        flex-grow: 0; /* Título não ocupa todo o espaço */
+        flex-shrink: 1; /* Permite que o título encolha sem sobrepor */
+        min-width: 120px; /* Garante que o título não fique muito pequeno */
+    }
+
+    header img.logo {
+        margin-left: 10px; /* Garante margem à esquerda da logo */
+    }
+
+    a.login-link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1.titulo {
+        font-size: 25px; /* Reduz título ainda mais em telas pequenas */
+        margin-left: 0; /* Garante alinhamento correto */
+    }
+
+    a.login-link {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .container {
     display: flex;
     flex-direction: column; 
