@@ -58,7 +58,7 @@ const loginUsuario = async () =>{
             usuarioLoginInput.value = ""
             senhaLoginInput.value=""
             const loginLink = document.querySelector('#loginLink')
-            loginLink.innerHTML ='logout'
+            loginLink.innerHTML ='Logout'
         } 
         catch (e) {
             senhaCadastroInput.value =''
