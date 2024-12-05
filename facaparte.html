@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +14,13 @@
     <style>
         /* Destaque para o menu ativo */
         .nav-link.active {
-            color: #ffdd00 !important; /* Cor amarela para indicar a página atual */
+            color: #ffdd00 !important;
+            /* Cor amarela para indicar a página atual */
             font-weight: bold;
         }
     </style>
 </head>
+
 <body onload="prepararPagina()">
     <!-- Cabeçalho -->
     <header class="bg-custom text-white">
@@ -33,7 +36,8 @@
                 </div>
                 <!-- Link de Login (abre o modal) -->
                 <div class="col-12 col-md-2 text-end p-0">
-                    <a href="#" class="font-roboto login-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    <a href="#" class="font-roboto login-link" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">Login</a>
                 </div>
             </div>
         </div>
@@ -44,7 +48,8 @@
         <div class="container-fluid">
             <!-- Palavra "Menu" visível apenas em dispositivos móveis -->
             <a class="navbar-brand text-white d-lg-none" href="#">Menu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -61,24 +66,29 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Tela "Faça Parte" -->
+
     <head>
         <title>tela faca parte</title>
         <link rel="stylesheet" href="facaparte.css">
     </head>
+
     <body>
         <div class="container">
             <div class="content">
                 <div class="left-image">
-                    <img src="imagemTelafacaparte.png" alt="Imagem Esquerda"> 
+                    <img src="imagemTelafacaparte.png" alt="Imagem Esquerda">
                 </div>
                 <div class="center-content">
                     <div class="text">
                         <h2>Seja voluntário/a</h2>
-                        <p>Participe do projeto Matemática no Metrô e leve o ensino da matemática para as estações de São Paulo!</p>
-                        <p>Como voluntário, você terá a chance de compartilhar conhecimento, inspirar alunos e tornar o aprendizado mais acessível e dinâmico.</p>
-                        <p>Junte-se a nós nessa missão de promover o raciocínio lógico e fazer a diferença na vida de muitas pessoas. (apenas para alunos do Instituto Mauá de tecnologia)</p>
+                        <p>Participe do projeto Matemática no Metrô e leve o ensino da matemática para as estações de
+                            São Paulo!</p>
+                        <p>Como voluntário, você terá a chance de compartilhar conhecimento, inspirar alunos e tornar o
+                            aprendizado mais acessível e dinâmico.</p>
+                        <p>Junte-se a nós nessa missão de promover o raciocínio lógico e fazer a diferença na vida de
+                            muitas pessoas. (apenas para alunos do Instituto Mauá de tecnologia)</p>
                     </div>
                     <button class="button">Saiba mais</button>
                 </div>
@@ -89,17 +99,17 @@
         </div>
     </body>
 
-   <!-- Modal de Login -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Formulário de Login -->
-                
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulário de Login -->
+
                     <div class="mb-3">
                         <label for="username" class="form-label">Usuário</label>
                         <input type="text" class="form-control" id="username" name="username" required>
@@ -108,35 +118,37 @@
                         <label for="password" class="form-label">Senha</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary"onclick="loginUsuario()">Entrar</button>
-                
-                <hr>
-                <p class="text-center mt-3">
-                    Caso você não tenha login, <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" class="text-primary">cadastre-se aqui</a>.
-                </p>
+                    <button type="submit" class="btn btn-primary" onclick="loginUsuario()">Entrar</button>
+
+                    <hr>
+                    <p class="text-center mt-3">
+                        Caso você não tenha login, <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
+                            class="text-primary">cadastre-se aqui</a>.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal de Cadastro -->
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="registerModalLabel">Cadastro</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Formulário de Cadastro -->
-                
+    <!-- Modal de Cadastro -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Cadastro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulário de Cadastro -->
+
                     <div class="mb-3">
                         <label for="registerUsername" class="form-label">Usuário</label>
                         <input type="text" class="form-control" id="registerUsername" name="registerUsername" required>
                     </div>
                     <div class="mb-3">
                         <label for="registerPassword" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="registerPassword" name="registerPassword" required>
+                        <input type="password" class="form-control" id="registerPassword" name="registerPassword"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="educationLevel" class="form-label">Nível de Escolaridade</label>
@@ -151,12 +163,12 @@
                             <option value="Pós-graduação">Pós-graduação (Especialização, Mestrado, Doutorado)</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success"onclick="cadastrarUsuario()">Cadastrar</button>
-               
+                    <button type="submit" class="btn btn-success" onclick="cadastrarUsuario()">Cadastrar</button>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <!-- Incluindo o Bootstrap JS -->
@@ -164,4 +176,5 @@
     <script src="loginCode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
+
 </html>

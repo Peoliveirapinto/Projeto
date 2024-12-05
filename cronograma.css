@@ -39,15 +39,18 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinha os itens ao topo */
-    justify-content: flex-start; /* Move tudo para o topo verticalmente */
+    align-items: flex-start;
+    /* Alinha os itens ao topo */
+    justify-content: flex-start;
+    /* Move tudo para o topo verticalmente */
     padding: 20px;
     background-color: #fff;
 }
 
 .right h1 {
     font-size: 2rem;
-    margin-bottom: 10px; /* Espaço entre o título e a caixa azul */
+    margin-bottom: 10px;
+    /* Espaço entre o título e a caixa azul */
 }
 
 .station-info {
