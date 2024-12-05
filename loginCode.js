@@ -55,13 +55,14 @@ const loginUsuario = async () =>{
                 }
             )
             localStorage.setItem("token",response.data)
+            localStorage.setItem("login",usuarioLogin)
             usuarioLoginInput.value = ""
             senhaLoginInput.value=""
             const loginLink = document.querySelector('#loginLink')
             loginLink.innerHTML ='Logout'
         } 
         catch (e) {
-            senhaCadastroInput.value =''
+            senhaLoginInput.value =''
         }
     }
 }

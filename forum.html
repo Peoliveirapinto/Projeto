@@ -74,7 +74,44 @@
 
     <body onload="prepararPagina()">
         <div class="container">
-            <button class="button">Mande a sua dúvida</button>
+            <button class="button" onclick="duvidaStart()">Mande a sua dúvida</button>
+            <!--area de pergunta-->
+            <div id="areaPergunta" class="container mt-3 d-none" style="border: 1px solid black; border-radius: 10px;">
+                <div class="row justify-content-start">
+                    <!--espaço pra inserir pergunta-->
+                    <div class="col-12 col-md-11 mt-2">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="duvidaBox" placeholder="Sua dúvida">
+                            <label for="duvidaBox">
+                                Sua dúvida
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!--espaço para inserir detalhes da pergunta-->
+                <label for="detalhesBox">Detalhe a sua dúvida:</label>
+                <div class="row">
+                    <div class="form-floating mb-3">
+                        <textarea id="detalhesBox" class="col-12 col-md-11" placeholder="Detalhes" rows="15" cols="20"
+                            style="resize:none"></textarea>
+                    </div>
+                </div>
+                <!--botão de enviar-->
+                <div class="row justify-content-between">
+                    <!--botões de fechar-->
+                    <div class="col-5 col-sm-4 col-md-3">
+                        <button class="btn btn-outline-danger mb-3 w-100" onclick="fecharPergunta()">
+                            FECHAR
+                        </button>
+                    </div>
+                    <!--botão de enviar-->
+                    <div class="col-6 col-sm-5 col-md-4">
+                        <button class="btn btn-outline-primary mb-3 w-100" onclick="enviarPergunta()">
+                            ENVIAR
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <h2>Dúvidas da comunidade</h2>
 
@@ -167,6 +204,7 @@
         <!-- Incluindo o Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="forumCode.js"></script>
     </body>
 
 </html>
