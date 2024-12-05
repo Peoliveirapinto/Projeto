@@ -175,7 +175,13 @@ a.login-link:hover {
     gap: 30px; 
     padding: 50px 50px 50px 0; /* Adiciona padding à esquerda */
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 20px; /* Ajusta o padding para telas menores */
+    font-family: sans-serif;
 }
+
 
 .contato {
     display: flex;
@@ -208,4 +214,42 @@ a.login-link:hover {
 
 .contato .texto p:first-child {
     font-weight: bold; 
+}
+
+
+.contato {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; /* Usa largura completa do container */
+    max-width: 300px; /* Limita a largura máxima */
+    background-color: #fff;
+    box-sizing: border-box; /* Inclui padding na largura */
+    margin: 0 auto; /* Centraliza as caixas */
+}
+
+.icone {
+    width: 40px;
+    margin-right: 20px;
+    margin-left: 0; /* Remove o deslocamento negativo */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 600px) {
+    .contato {
+        flex-direction: column; /* Alinha itens verticalmente */
+        text-align: center;
+        padding: 15px;
+    }
+
+    .icone {
+        margin: 0 auto 10px; /* Centraliza e adiciona espaço abaixo */
+    }
+
+    .texto {
+        text-align: center; /* Centraliza o texto */
+    }
 }
