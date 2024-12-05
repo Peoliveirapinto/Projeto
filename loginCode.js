@@ -67,11 +67,9 @@ const loginUsuario = async () =>{
                     password: senhaLogin
                 }
             )
-            const adminEndpoint = '/getAdmin'
-            const URLcompletaAdmin = `${protocolo}${baseURL}${adminEndpoint}`
-            const adminResponse = await axios.get(URLcompletaAdmin)
-            localStorage.setItem("isAdmin",adminResponse.data)
-            localStorage.setItem("token",response.data)
+            localStorage.setItem("isAdmin",response.data.isAdmin)
+            console.log(response.data.isAdmin)
+            localStorage.setItem("token",response.data.token)
             localStorage.setItem("login",usuarioLogin)
             usuarioLoginInput.value = ""
             senhaLoginInput.value=""
@@ -81,6 +79,7 @@ const loginUsuario = async () =>{
         } 
         catch (e) {
             senhaLoginInput.value =''
+            console.log(e)
         }
     }
 }
