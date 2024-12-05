@@ -54,7 +54,7 @@ app.post("/login", async (req, res) => {
         return res.status(401).json({ mensagem: "senha inválida" })
     }
     const token = jwt.sign(
-        { login: login },
+        { login: login,isAdmin: u.isAdmin },
         "chave-secreta",
         { expiresIn: '1h' }
     )
@@ -74,11 +74,6 @@ app.post("/addAdmin", async (req, res) => {
     }
 })
 
-app.get("/getAdmin", async (req, res) => {
-    const admin = await Usuario.findOne({ login: req.body.login })
-    const isAdmin = admin.get("isAdmin")
-    res.json(isAdmin)
-})
 
 //conexão das dúvidas do fórum ao banco
 const duvidaSchema = mongoose.Schema({
