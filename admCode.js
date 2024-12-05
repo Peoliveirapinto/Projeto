@@ -1,6 +1,3 @@
-const protocolo = 'http://'
-const baseURL = 'localhost:3000'
-
 async function addAdmin() {
     let adminUsernameInput = document.querySelector('#adminUsername')
     let adminUsername = adminUsernameInput.value

@@ -73,10 +73,10 @@
             <h2>Tornar Admin</h2>
             <div class="row">
                 <div class="col-10">
-                    <input type="text" class="form-control" placeholder="NICK DO USUÁRIO">
+                    <input id="adminUsername" type="text" class="form-control" placeholder="NICK DO USUÁRIO">
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary">Enviar</button>
+                    <button class="btn btn-primary" onclick="addAdmin()">Enviar</button>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                     <input type="date" class="form-control" id="data">
                 </div>
                 <div class="col-12 mt-2">
-                    <button class="btn btn-primary">Enviar</button>
+                    <button class="btn btn-primary" onclick="postExercicio()">Enviar</button>
                 </div>
             </div>
         </div>

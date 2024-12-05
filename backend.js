@@ -63,7 +63,7 @@ app.post("/login", async (req, res) => {
 
 app.post("/addAdmin", async (req, res) => {
     try {
-        const isAdmin = { isAdmin: true }
+        const isAdmin = true
         const novoAdmin = await Usuario.findOneAndUpdate({ login: req.body.login }, { isAdmin: isAdmin })
         const respMongo = await novoAdmin.save()
         console.log(respMongo)
