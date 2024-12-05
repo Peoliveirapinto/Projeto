@@ -58,7 +58,7 @@ app.post("/login", async (req, res) => {
         "chave-secreta",
         { expiresIn: '1h' }
     )
-    res.status(200).json({ token: token })
+    res.status(200).json({ token: token ,isAdmin: u.isAdmin})
 })
 
 app.post("/addAdmin", async (req, res) => {

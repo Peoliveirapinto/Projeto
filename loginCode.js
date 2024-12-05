@@ -15,12 +15,12 @@ async function prepararPagina(){
 
 async function hideAdm(){
     const isAdmin = localStorage.getItem("isAdmin")
-    if (isAdmin){
-        const adminLink = document.querySelector('#adminLink')
+    console.log(isAdmin)
+    const adminLink = document.querySelector('#adminLink')
+    if (isAdmin === "true"){
         adminLink.classList.remove('d-none')
     }
     else{
-        const adminLink = document.querySelector('#adminLink')
         adminLink.classList.add('d-none')
     }
 }
@@ -67,9 +67,8 @@ const loginUsuario = async () =>{
                     password: senhaLogin
                 }
             )
-            localStorage.setItem("isAdmin",response.data.isAdmin)
-            console.log(response.data.isAdmin)
             localStorage.setItem("token",response.data.token)
+            localStorage.setItem("isAdmin",response.data.isAdmin)
             localStorage.setItem("login",usuarioLogin)
             usuarioLoginInput.value = ""
             senhaLoginInput.value=""
