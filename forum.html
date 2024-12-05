@@ -33,7 +33,7 @@
                 </div>
                 <!-- Link de Login (abre o modal) -->
                 <div class="col-12 col-md-2 text-end p-0">
-                    <a href="#" class="font-roboto login-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    <a id="loginLink" href="#" class="font-roboto login-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
                         <label for="password" class="form-label">Senha</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-primary" onclick="loginUsuario()">Entrar</button>
                 </form>
                 <hr>
                 <p class="text-center mt-3">
@@ -150,7 +150,7 @@
                             <option value="Pós-graduação">Pós-graduação (Especialização, Mestrado, Doutorado)</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <button type="submit" class="btn btn-success" onclick="cadastrarUsuario()">Cadastrar</button>
                 </form>
             </div>
         </div>
