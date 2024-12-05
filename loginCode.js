@@ -15,7 +15,6 @@ async function prepararPagina(){
 
 async function hideAdm(){
     const isAdmin = localStorage.getItem("isAdmin")
-    console.log(isAdmin)
     const adminLink = document.querySelector('#adminLink')
     if (isAdmin === "true"){
         adminLink.classList.remove('d-none')

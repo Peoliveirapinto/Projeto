@@ -21,7 +21,7 @@
     </style>
 </head>
 
-<body onload="prepararPagina()">
+<body onload="prepararPagina(), mostrarDuvidas()">
     <!-- Cabeçalho -->
     <header class="bg-custom text-white">
         <div class="container-fluid">
@@ -115,19 +115,8 @@
 
             <h2>Dúvidas da comunidade</h2>
 
-            <div class="question-container">
-                <div class="question">
-                    <strong>Fulano</strong>
-                    <p>Não entendi a resolução do exercício postado na quinta</p>
-                </div>
-            </div>
-
-            <div class="question-container">
-                <div class="question">
-                    <strong>Sicrano</strong>
-                    <p>Como eu calculo o desconto em cima da taxa de serviço</p>
-                </div>
-                <div class="resolved">Resolvido</div>
+            <div id="duvidasContainer" class="question-container-fluid">
+                
             </div>
         </div>
 
