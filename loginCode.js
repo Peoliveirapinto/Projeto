@@ -32,6 +32,8 @@ async function cadastrarUsuario() {
         }
         catch(e){
             senhaCadastroInput.value =''
+            escolaridadeInput.value =''
+            console.log(e)
         }
     }
 }
