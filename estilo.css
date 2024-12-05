@@ -167,3 +167,23 @@ a.login-link:hover {
         font-size: 14px;
     }
 }
+.rectangle {
+    background-color: #007bbe; /* Cor do retângulo */
+    border-radius: 3px; /* Bordas arredondadas */
+    height: 300px; /* Altura do retângulo */
+    width: 100%; /* Largura total do container */
+    max-width: 600px; /* Largura máxima para centralização */
+    margin: 0 auto; /* Centraliza o retângulo horizontalmente */
+    position: relative; /* Para posicionar o texto dentro */
+}
+
+.rectangle-text {
+    color: white; /* Cor do texto */
+    font-family: 'Roboto', sans-serif; /* Fonte padrão */
+    font-size: 22px; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    position: absolute; /* Posicionamento relativo ao retângulo */
+    top: 5px; /* Distância do topo */
+    left: 10px; /* Distância da borda esquerda */
+    margin: 0; /* Remove margens padrão */
+}
