@@ -3,12 +3,21 @@ const baseURL = 'localhost:3000'
 
 async function prepararPagina(){
     const token = localStorage.getItem("token")
+    const isAdmin = localStorage.getItem("isAdmin")
     const loginLink = document.querySelector('#loginLink')
     if (token){
         loginLink.innerHTML = 'Logout'
     }
     else{
         loginLink.innerHTML = 'Login'
+    }
+    if (isAdmin){
+        const adminLink = document.querySelector('#adminLink')
+        adminLink.classList.remove('d-none')
+    }
+    else{
+        const adminLink = document.querySelector('#adminLink')
+        adminLink.classList.add('d-none')
     }
 }
 
@@ -54,6 +63,10 @@ const loginUsuario = async () =>{
                     password: senhaLogin
                 }
             )
+            const adminEndpoint = '/getAdmin'
+            const URLcompletaAdmin = `${protocolo}${baseURL}${adminEndpoint}`
+            const adminResponse = await axios.get(URLcompletaAdmin)
+            localStorage.setItem("isAdmin",adminResponse.data)
             localStorage.setItem("token",response.data)
             localStorage.setItem("login",usuarioLogin)
             usuarioLoginInput.value = ""

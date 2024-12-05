@@ -74,6 +74,11 @@ app.post("/addAdmin", async (req, res) => {
     }
 })
 
+app.get("/getAdmin", async (req, res) => {
+    const admin = await Usuario.findOne({ login: req.body.login })
+    res.json(admin)
+})
+
 //conexão das dúvidas do fórum ao banco
 const duvidaSchema = mongoose.Schema({
     tituloDuvida: { type: String, required: true },
