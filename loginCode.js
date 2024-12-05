@@ -3,7 +3,6 @@ const baseURL = 'localhost:3000'
 
 async function prepararPagina(){
     const token = localStorage.getItem("token")
-    const isAdmin = localStorage.getItem("isAdmin")
     const loginLink = document.querySelector('#loginLink')
     if (token){
         loginLink.innerHTML = 'Logout'
@@ -11,6 +10,11 @@ async function prepararPagina(){
     else{
         loginLink.innerHTML = 'Login'
     }
+    hideAdm()
+}
+
+async function hideAdm(){
+    const isAdmin = localStorage.getItem("isAdmin")
     if (isAdmin){
         const adminLink = document.querySelector('#adminLink')
         adminLink.classList.remove('d-none')
@@ -73,6 +77,7 @@ const loginUsuario = async () =>{
             senhaLoginInput.value=""
             const loginLink = document.querySelector('#loginLink')
             loginLink.innerHTML ='Logout'
+            hideAdm()
         } 
         catch (e) {
             senhaLoginInput.value =''
