@@ -10,6 +10,19 @@ async function prepararPagina(){
     else{
         loginLink.innerHTML = 'Login'
     }
+    hideAdm()
+}
+
+async function hideAdm(){
+    const isAdmin = localStorage.getItem("isAdmin")
+    if (isAdmin){
+        const adminLink = document.querySelector('#adminLink')
+        adminLink.classList.remove('d-none')
+    }
+    else{
+        const adminLink = document.querySelector('#adminLink')
+        adminLink.classList.add('d-none')
+    }
 }
 
 async function cadastrarUsuario() {
@@ -54,14 +67,20 @@ const loginUsuario = async () =>{
                     password: senhaLogin
                 }
             )
+            const adminEndpoint = '/getAdmin'
+            const URLcompletaAdmin = `${protocolo}${baseURL}${adminEndpoint}`
+            const adminResponse = await axios.get(URLcompletaAdmin)
+            localStorage.setItem("isAdmin",adminResponse.data)
             localStorage.setItem("token",response.data)
+            localStorage.setItem("login",usuarioLogin)
             usuarioLoginInput.value = ""
             senhaLoginInput.value=""
             const loginLink = document.querySelector('#loginLink')
             loginLink.innerHTML ='Logout'
+            hideAdm()
         } 
         catch (e) {
-            senhaCadastroInput.value =''
+            senhaLoginInput.value =''
         }
     }
 }
