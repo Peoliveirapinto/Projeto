@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="prepararPagina()">
 <!-- Cabeçalho -->
 <header class="bg-custom text-white">
     <div class="container-fluid">
@@ -88,7 +88,7 @@
             </div>
             <div class="modal-body">
                 <!-- Formulário de Login -->
-                <form action="login.html" method="POST">
+                
                     <div class="mb-3">
                         <label for="username" class="form-label">Usuário</label>
                         <input type="text" class="form-control" id="username" name="username" required>
@@ -98,7 +98,7 @@
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Entrar</button>
-                </form>
+                
                 <hr>
                 <p class="text-center mt-3">
                     Caso você não tenha login, <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" class="text-primary">cadastre-se aqui</a>.
@@ -118,7 +118,7 @@
             </div>
             <div class="modal-body">
                 <!-- Formulário de Cadastro -->
-                <form action="register.html" method="POST">
+                
                     <div class="mb-3">
                         <label for="registerUsername" class="form-label">Usuário</label>
                         <input type="text" class="form-control" id="registerUsername" name="registerUsername" required>
@@ -140,8 +140,8 @@
                             <option value="Pós-graduação">Pós-graduação (Especialização, Mestrado, Doutorado)</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Cadastrar</button>
-                </form>
+                    <button type="submit" class="btn btn-success"onclick="cadastrarUsuario()">Cadastrar</button>
+                
             </div>
         </div>
     </div>
@@ -175,6 +175,7 @@
         </div>
 
     </div>
-
+    <script src="loginCode.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
