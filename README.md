@@ -1,7 +1,7 @@
 para o funcionamento correto do backend é necessário a adição de um arquivo config.js no formato
 var config ={
     mongoKey : ' chave do servidor no mongodb'
-}
+};
 module.exports = {config};
 
 Integrantes
