@@ -17,6 +17,7 @@
 </head>
 
 <body onload="prepararPagina()">
+    <!-- Cabeçalho e NavBar-->
     <header class="bg-custom text-white">
         <div class="container-fluid">
             <div class="row align-items-center">
@@ -33,7 +34,6 @@
             </div>
         </div>
     </header>
-
     <nav class="navbar navbar-expand-lg bg-nav text-white">
         <div class="container-fluid">
             <a class="navbar-brand text-white d-lg-none" href="#">Menu</a>
@@ -57,41 +57,7 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <div class="mb-4">
-            <h2>Tornar Admin</h2>
-            <div class="row">
-                <div class="col-10">
-                    <input id="adminUsername" type="text" class="form-control" placeholder="NICK DO USUÁRIO">
-                </div>
-                <div class="col-2">
-                    <button class="btn btn-primary" onclick="addAdmin()">Enviar</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-4">
-            <h2>Adicionar Exercício</h2>
-            <div class="row mb-3">
-                <div class="col-12 mb-2">
-                    <label for="conteudo" class="form-label">Conteúdo</label>
-                    <input type="text" class="form-control" id="conteudo" placeholder="Digite o conteúdo do exercício">
-                </div>
-                <div class="col-12 mb-2">
-                    <label for="resposta" class="form-label">Resposta</label>
-                    <input type="text" class="form-control" id="resposta" placeholder="Digite a resposta do exercício">
-                </div>
-                <div class="col-12 mb-2">
-                    <label for="data" class="form-label">Data</label>
-                    <input type="date" class="form-control" id="data">
-                </div>
-                <div class="col-12 mt-2">
-                    <button class="btn btn-primary" onclick="postExercicio()">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Modal de Login e Cadastro -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -119,7 +85,6 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -151,12 +116,47 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-success" onclick="cadastrarUsuario()">Cadastrar</button>
-
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Conteúdo da Página -->
+    <div class="container mt-4">
+        <div class="mb-4">
+            <h2>Tornar Admin</h2>
+            <div class="row">
+                <div class="col-10">
+                    <input id="adminUsername" type="text" class="form-control" placeholder="NICK DO USUÁRIO">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" onclick="addAdmin()">Enviar</button>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h2>Adicionar Exercício</h2>
+            <div class="row mb-3">
+                <div class="col-12 mb-2">
+                    <label for="conteudo" class="form-label">Conteúdo</label>
+                    <input type="text" class="form-control" id="conteudo" placeholder="Digite o conteúdo do exercício">
+                </div>
+                <div class="col-12 mb-2">
+                    <label for="resposta" class="form-label">Resposta</label>
+                    <input type="text" class="form-control" id="resposta" placeholder="Digite a resposta do exercício">
+                </div>
+                <div class="col-12 mb-2">
+                    <label for="data" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="data">
+                </div>
+                <div class="col-12 mt-2">
+                    <button class="btn btn-primary" onclick="postExercicio()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Imports e códigos-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="frontEndCode/loginCode.js"></script>
     <script src="frontEndCode/admCode.js"></script>

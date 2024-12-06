@@ -5,36 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matemática no Metrô</title>
-    <!-- Incluindo o Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Fontes do Google -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Ligação com o arquivo CSS -->
     <link rel="stylesheet" href="style/estilo.css">
+    <link rel="stylesheet" href="style/forum.css">
     <style>
-        /* Destaque para o menu ativo */
         .nav-link.active {
             color: #ffdd00 !important;
-            /* Cor amarela para indicar a página atual */
             font-weight: bold;
         }
     </style>
 </head>
 
 <body onload="prepararPagina(), mostrarDuvidas()">
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho e NavBar-->
     <header class="bg-custom text-white">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <!-- Logo -->
                 <div class="col-12 col-md-2 text-start p-0 logo-container">
                     <img src="imagens/logo.jpg" alt="Logo" class="img-fluid logo">
                 </div>
-                <!-- Título -->
                 <div class="col-12 col-md-8 text-start p-0">
                     <h1 class="font-roboto font-weight-bold titulo">Matemática no Metrô</h1>
                 </div>
-                <!-- Link de Login (abre o modal) -->
                 <div class="col-12 col-md-2 text-end p-0">
                     <a id="loginLink" href="#" class="font-roboto login-link" data-bs-toggle="modal"
                         data-bs-target="#loginModal">Login</a>
@@ -42,11 +35,8 @@
             </div>
         </div>
     </header>
-
-    <!-- Menu de Navegação -->
     <nav class="navbar navbar-expand-lg bg-nav text-white">
         <div class="container-fluid">
-            <!-- Palavra "Menu" visível apenas em dispositivos móveis -->
             <a class="navbar-brand text-white d-lg-none" href="#">Menu</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,139 +51,121 @@
                     <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
                     <li class="nav-item"><a class="nav-link" href="facaparte.html">Faça Parte</a></li>
                     <li class="nav-item"><a class="nav-link" href="faleconosco.html">Fale Conosco</a></li>
-                    <li id="adminLink" class="nav-item d-none"><a class="nav-link" href="adm.html">Administração</a></li>
+                    <li id="adminLink" class="nav-item d-none"><a class="nav-link" href="adm.html">Administração</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <head>
-        <title>Dúvidas da Comunidade</title>
-        <link rel="stylesheet" href="style/forum.css">
-    </head>
-
-    <body>
-        <div class="container">
-            <button class="button" onclick="duvidaStart()">Mande a sua dúvida</button>
-            <!--area de pergunta-->
-            <div id="areaPergunta" class="container mt-3 d-none" style="border: 1px solid black; border-radius: 10px;">
-                <div class="row justify-content-start">
-                    <!--espaço pra inserir pergunta-->
-                    <div class="col-12 col-md-11 mt-2">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="duvidaBox" placeholder="Sua dúvida">
-                            <label for="duvidaBox">
-                                Sua dúvida
-                            </label>
-                        </div>
-                    </div>
+    <!-- Modal de Login e Cadastro -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!--espaço para inserir detalhes da pergunta-->
-                <label for="detalhesBox">Detalhe a sua dúvida:</label>
-                <div class="row">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Usuário</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="loginUsuario()">Entrar</button>
+                    <hr>
+                    <p class="text-center mt-3">
+                        Caso você não tenha login, <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
+                            class="text-primary">cadastre-se aqui</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Cadastro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="registerUsername" class="form-label">Usuário</label>
+                        <input type="text" class="form-control" id="registerUsername" name="registerUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="registerPassword" name="registerPassword"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="educationLevel" class="form-label">Nível de Escolaridade</label>
+                        <select class="form-select" id="educationLevel" name="educationLevel" required>
+                            <option value="" disabled selected>Selecione o nível</option>
+                            <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+                            <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+                            <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                            <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                            <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                            <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                            <option value="Pós-graduação">Pós-graduação (Especialização, Mestrado, Doutorado)
+                            </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success" onclick="cadastrarUsuario()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo da Página -->
+    <div class="container">
+        <button class="button" onclick="duvidaStart()">Mande a sua dúvida</button>
+        <div id="areaPergunta" class="container mt-3 d-none" style="border: 1px solid black; border-radius: 10px;">
+            <div class="row justify-content-start">
+                <div class="col-12 col-md-11 mt-2">
                     <div class="form-floating mb-3">
-                        <textarea id="detalhesBox" class="col-12 col-md-11" placeholder="Detalhes" rows="15" cols="20"
-                            style="resize:none"></textarea>
-                    </div>
-                </div>
-                <!--botão de enviar-->
-                <div class="row justify-content-between">
-                    <!--botões de fechar-->
-                    <div class="col-5 col-sm-4 col-md-3">
-                        <button class="btn btn-outline-danger mb-3 w-100" onclick="fecharPergunta()">
-                            FECHAR
-                        </button>
-                    </div>
-                    <!--botão de enviar-->
-                    <div class="col-6 col-sm-5 col-md-4">
-                        <button class="btn btn-outline-primary mb-3 w-100" onclick="enviarPergunta()">
-                            ENVIAR
-                        </button>
+                        <input type="text" class="form-control" id="duvidaBox" placeholder="Sua dúvida">
+                        <label for="duvidaBox">
+                            Sua dúvida
+                        </label>
                     </div>
                 </div>
             </div>
-
-            <h2>Dúvidas da comunidade</h2>
-
-            <div id="duvidasContainer" class="question-container-fluid">
-                
+            <label for="detalhesBox">Detalhe a sua dúvida:</label>
+            <div class="row">
+                <div class="form-floating mb-3">
+                    <textarea id="detalhesBox" class="col-12 col-md-11" placeholder="Detalhes" rows="15" cols="20"
+                        style="resize:none"></textarea>
+                </div>
             </div>
-        </div>
-
-        <!-- Modal de Login -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Formulário de Login -->
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Usuário</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary" onclick="loginUsuario()">Entrar</button>
-                        <hr>
-                        <p class="text-center mt-3">
-                            Caso você não tenha login, <a href="#" data-bs-toggle="modal"
-                                data-bs-target="#registerModal" class="text-primary">cadastre-se aqui</a>.
-                        </p>
-                    </div>
+            <div class="row justify-content-between">
+                <div class="col-5 col-sm-4 col-md-3">
+                    <button class="btn btn-outline-danger mb-3 w-100" onclick="fecharPergunta()">
+                        FECHAR
+                    </button>
+                </div>
+                <div class="col-6 col-sm-5 col-md-4">
+                    <button class="btn btn-outline-primary mb-3 w-100" onclick="enviarPergunta()">
+                        ENVIAR
+                    </button>
                 </div>
             </div>
         </div>
-
-        <!-- Modal de Cadastro -->
-        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="registerModalLabel">Cadastro</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Formulário de Cadastro -->
-                        <div class="mb-3">
-                            <label for="registerUsername" class="form-label">Usuário</label>
-                            <input type="text" class="form-control" id="registerUsername" name="registerUsername"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerPassword" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="registerPassword" name="registerPassword"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="educationLevel" class="form-label">Nível de Escolaridade</label>
-                            <select class="form-select" id="educationLevel" name="educationLevel" required>
-                                <option value="" disabled selected>Selecione o nível</option>
-                                <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
-                                <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
-                                <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
-                                <option value="Ensino Médio Completo">Ensino Médio Completo</option>
-                                <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
-                                <option value="Ensino Superior Completo">Ensino Superior Completo</option>
-                                <option value="Pós-graduação">Pós-graduação (Especialização, Mestrado, Doutorado)
-                                </option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-success" onclick="cadastrarUsuario()">Cadastrar</button>
-                    </div>
-                </div>
-            </div>
+        <h2>Dúvidas da comunidade</h2>
+        <div id="duvidasContainer" class="question-container-fluid">
         </div>
-        <script src="frontEndCode/loginCode.js"></script>
-        <!-- Incluindo o Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="frontEndCode/forumCode.js"></script>
-    </body>
+    </div>
+
+    <!--Imports e códigos-->
+    <script src="frontEndCode/loginCode.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="frontEndCode/forumCode.js"></script>
+</body>
 
 </html>
