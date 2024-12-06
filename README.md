@@ -10,4 +10,4 @@ Pedro de Oliveira Pinto - programador backend, programador frontend(apenas a par
 
 Julian Castelli Marquesin - programador frontend e responsável pela documentação
 
-Lucas - programador frontend e responsável pelo design
+Lucas Frigato - programador frontend e responsável pelo design
