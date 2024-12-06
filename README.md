@@ -5,6 +5,6 @@ var config ={
 module.exports = {config};
 
 Integrantes
-Pedro de Oliveira Pinto - programdor backend e programador frontend(apenas a parte em javascript)
+Pedro de Oliveira Pinto - programador backend, programador frontend(apenas a parte em javascript) e gerente do git
 Julian - programador frontend e responsável pela documentação
 Lucas - programador frontend e responsável pelo design
