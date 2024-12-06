@@ -54,11 +54,11 @@ app.post("/login", async (req, res) => {
         return res.status(401).json({ mensagem: "senha inválida" })
     }
     const token = jwt.sign(
-        { login: login,isAdmin: u.isAdmin },
+        { login: login, isAdmin: u.isAdmin },
         "chave-secreta",
         { expiresIn: '1h' }
     )
-    res.status(200).json({ token: token ,isAdmin: u.isAdmin})
+    res.status(200).json({ token: token, isAdmin: u.isAdmin })
 })
 
 app.post("/addAdmin", async (req, res) => {
